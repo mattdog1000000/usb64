@@ -540,7 +540,7 @@ uint16_t input_get_state(uint8_t id, void *response, bool *combo_pressed)
         static uint32_t idle_timer[4] = {0};
         if (mouse->available()) idle_timer[id] = millis();
         mouse->mouseDataClear();
-        if (millis() - idle_timer[id] > 100)
+        if (millis() - idle_timer[id] > 10)
         {
             _axis[0] = 0;
             _axis[1] = 0;
